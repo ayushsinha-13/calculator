@@ -1,0 +1,55 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: linear-gradient(to right, #00AAFF, #00FF6C);
+    /* this creates the background image of gradient */
+}
+
+.calc-grid{
+    display: grid; /* this creates this div to grid system */
+    margin-top: 2rem; /* this gives a 2 rem margin to top of the container */
+    grid-template-columns: repeat(4 ,6rem); /* this creates the grid of 4 col each of 6 rem */
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem); /* minmax tells minimum size and max size and it will repeat for 5 times of 6rem size*/
+    justify-content: center;
+}
+
+.calc-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+}
+
+.calc-grid > button:hover,
+.calc-grid > button:focus {
+    background-color: rgba(255,255,255,.9);
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1; /* this tell to take entire row*/
+    background-color: rgba(0, 0, 0, .75);
+    display: flex; /* flex act as block element but grows as it needs*/
+    flex-direction: column; /* every block will be in a column*/
+    align-items: flex-end; /* right aligned*/
+    justify-content: space-around; /* space between the blocks*/
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .prev-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+.output .curr-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 2.5rem;
+}
